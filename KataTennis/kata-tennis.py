@@ -1,4 +1,3 @@
-
 ##
 ## This is a class that models a tennis game.
 class TennisGame(object):
@@ -24,40 +23,23 @@ class TennisGame(object):
 	
 	## These are boolean methods to test for certain game scenarios
 	def isDeuce(self):
-		if(self.player1Score >= 3 and self.player1Score == self.player2Score):
-			return True
-		else:
-			return False
+		return (self.player1Score >= 3 and self.player1Score == self.player2Score)
 	
 	def player1HasAdvantage(self):
-		if(self.player1Score >= 4 and (self.player1Score - 1) == self.player2Score):
-			return True
-		else:
-			return False
-			
+		return (self.player1Score >= 4 and (self.player1Score - 1) == self.player2Score)
+
 	def player2HasAdvantage(self):
-		if(self.player2Score >= 4 and (self.player2Score - 1) == self.player1Score):
-			return True
-		else:
-			return False
+		return (self.player2Score >= 4 and (self.player2Score - 1) == self.player1Score)
 			
 	def player1Wins(self):
-		if(self.player1Score >= 3 and self.player1Score > self.player2Score):
-			return True
-		else:
-			return False
+		return (self.player1Score >= 4 and (self.player1Score - self.player2Score) >= 2)
 	
 	def player2Wins(self):
-		if(self.player2Score >= 3 and self.player2Score > self.player1Score):
-			return True
-		else:
-			return False
+		return (self.player2Score >= 4 and (self.player2Score - self.player1Score) >= 2)
 			
 	def isTied(self):
-		if(self.player1Score == self.player2Score):
-			return True
-		else:
-			return False
+		return (self.player1Score == self.player2Score)
+
 		
 	## This method returns the current score of the game.
 	def getScore(self):
